@@ -1,0 +1,258 @@
+/*========== ABOUT PAGE STYLES ==========*/
+
+.about-page {
+    padding-top: 1rem !important;
+}
+
+.about__main-title {
+    color: #000000 !important;
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 0;
+}
+
+.about__title {
+    color: #000000 !important;
+    font-weight: 700;
+    font-size: 1.85rem;
+}
+
+.values__header-main {
+    color: #000000 !important;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.value__name {
+    color: #000000 !important;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center; 
+    font-size: 1.35rem; 
+}
+
+.about__main-title-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.center-flex {
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.about__title-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.about__icon-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.about__spacer {
+    height: 1.5rem;
+    width: 100%;
+}
+
+.text-sample-exact, 
+.value__description {
+    color: #707070;
+    font-weight: 400; 
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about__content-box {
+    background: var(--container-color);
+    padding: 1.25rem 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--first-color);
+    margin-bottom: 1.5rem;
+}
+
+.about__title-flex {
+    display: flex;
+    align-items: center;
+    column-gap: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.about__mission-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.about__mission-list li {
+    margin-bottom: 0.75rem;
+}
+
+/*========== CORE VALUES GRID ==========*/
+
+.values__section {
+    padding: 1rem 0;
+}
+
+.values__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+}
+
+@media screen and (min-width: 1025px) {
+    .values__container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .value__card:nth-child(1) { grid-column: 1 / span 2; }
+    .value__card:nth-child(2) { grid-column: 3 / span 2; }
+    .value__card:nth-child(3) { grid-column: 5 / span 2; }
+    .value__card:nth-child(4) { grid-column: 2 / span 2; }
+    .value__card:nth-child(5) { grid-column: 4 / span 2; }
+}
+
+
+@keyframes cardFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.value__card {
+    background: var(--container-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.value__card.card--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.value__card:nth-child(1) { transition-delay: 0.05s; }
+.value__card:nth-child(2) { transition-delay: 0.15s; }
+.value__card:nth-child(3) { transition-delay: 0.25s; }
+.value__card:nth-child(4) { transition-delay: 0.10s; }
+.value__card:nth-child(5) { transition-delay: 0.20s; }
+
+.value__img {
+    width: 100%;
+    height: 220px; 
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .values__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .values__container {
+        grid-template-columns: 1fr;
+    }
+    .about__main-title { font-size: 1.85rem; }
+    .about__title { font-size: 1.5rem; }
+}
+
+.justified {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about__bullet-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.about__bullet-list li {
+    margin-bottom: 1rem;
+    color: #707070;
+    line-height: 1.8;
+}
+
+.about__description p {
+    margin-bottom: 1.5rem;
+}
+
+/*========== 2560x1440 LARGE DESKTOP SCALING ==========*/
+
+@media screen and (min-width: 2560px) {
+  .about__main-title {
+    font-size: 3rem;
+  }
+
+  .about__title {
+    font-size: 2.25rem;
+  }
+
+  .values__header-main {
+    font-size: 2.75rem;
+  }
+
+  .about__title-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .about__icon-img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .text-sample-exact,
+  .value__description,
+  .about__bullet-list li {
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+
+  .about__content-box {
+    padding: 1.75rem 3.5rem;
+  }
+
+  .value__name {
+    font-size: 1.6rem;
+  }
+
+  .value__img {
+    height: 280px;
+  }
+
+  .value__card {
+    padding: 2.5rem;
+  }
+}
+
+/*========== TAMIL MOBILE LEFT-ALIGN ==========*/
+
+@media screen and (max-width: 767px) {
+  html.lang-ta .about__bullet-list li,
+  html.lang-ta .value__description {
+    text-align: left;
+  }
+}

@@ -1,0 +1,345 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+
+/*===== VARIABLES =====*/
+:root {
+  --header-height: 5rem;
+  --first-color: #069C54;
+  --first-color-alt: #048654;
+  --title-color: #393939;
+  --text-color: #707070;
+  --body-color: #FBFEFD;
+  --body-font: "Poppins", sans-serif;
+  --z-fixed: 100;
+}
+
+/*========== BASE ==========*/
+*, ::before, ::after { 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+ul { padding: 0; list-style: none; }
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+/*========== LAYOUT ==========*/
+.bd-container { 
+  max-width: 1200px; 
+  width: calc(100% - 2rem); 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bd-grid { 
+  display: grid; 
+  gap: 1.5rem; 
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0; 
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/*========== NAV & LOGO ==========*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.nav__logo { 
+  display: flex; 
+  align-items: center; 
+  column-gap: 0.75rem; 
+  color: var(--title-color); 
+  font-weight: 600;
+  flex-shrink: 1; 
+  min-width: 0; 
+}
+
+.nav__logo span { 
+  font-size: 0.78rem; 
+  line-height: 1.6; 
+  display: inline-block;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+html.lang-ta .nav__logo span {
+  line-height: 1.6;
+}
+
+.nav__logo-img { 
+  height: 55px; 
+  flex-shrink: 0;
+}
+
+.nav__item { 
+  margin-bottom: 2.5rem; 
+}
+
+.nav__link { 
+  color: var(--text-color); 
+  font-weight: 600; 
+  transition: 0.3s; 
+  white-space: nowrap; 
+  display: inline-block;
+}
+
+.nav__link:hover, 
+.active-link { 
+  color: var(--first-color); 
+}
+
+.nav__toggle { 
+  font-size: 1.8rem; 
+  cursor: pointer; 
+  color: var(--title-color);
+  flex-shrink: 0;
+}
+
+.show-menu { 
+  top: var(--header-height) !important; 
+}
+
+/*========== ANCHOR SCROLL OFFSET ==========*/
+.l-main section[id] {
+  scroll-margin-top: var(--header-height);
+}
+
+/*========== MOBILE MENU ==========*/
+@media screen and (max-width: 1060px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%; 
+    left: 0; 
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 3.5rem 0 2.5rem;
+    text-align: center;
+    background-color: var(--body-color);
+    transition: 0.4s;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .fab-whatsapp {
+    right: 1rem;
+  }
+
+  .psychologist__data,
+  .homeabout__img-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .homecontact__btn-wrapper {
+    padding-right: 0;
+    max-width: 100%;
+  }
+
+  .home__data {
+    padding-left: 0;
+  }
+
+  .homeabout__data {
+    padding-left: 0;
+  }
+
+  .homecontact__inner {
+    padding: 0 1rem;
+  }
+}
+
+/*========== NAV OVERLAP FIX  ==========*/
+@media screen and (max-width: 400px) {
+  .nav__logo span {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .nav__logo-img {
+    height: 45px;
+  }
+}
+
+/*========== RESPONSIVE BREAKPOINTS ==========*/
+@media screen and (max-width: 767px) {
+  .nav__logo span {
+    font-size: 0.92rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1060px) {
+  .nav__logo span {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav__logo span { 
+    font-size: 1.05rem; 
+  }
+  .nav__logo-img { 
+    height: 75px; 
+  }
+}
+
+@media screen and (min-width: 1061px) {
+  .nav {
+    column-gap: 1.5rem; 
+  }
+  .nav__logo span {
+    font-size: 1.05rem;
+  }
+  .nav__list { 
+    display: flex; 
+    column-gap: 1.5rem; 
+    align-items: center;
+  }
+  .nav__toggle { 
+    display: none; 
+  }
+  .nav__item { 
+    margin-bottom: 0; 
+  }
+}
+
+/*========== COMPONENTS ==========*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #FFF;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.button:hover { 
+  background-color: var(--first-color-alt); 
+}
+
+.lang-toggle-container {
+  display: inline-flex; 
+  align-items: center; 
+  border: 1px solid var(--first-color);
+  padding: 0.3rem 0.7rem; 
+  border-radius: 2rem; 
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-option { 
+  font-size: 0.75rem; 
+  color: #A6A6A6; 
+}
+
+.lang-option.active-lang { 
+  color: var(--first-color); 
+}
+
+.lang-separator { 
+  margin: 0 0.3rem; 
+  color: var(--first-color); 
+}
+
+/*========== SCROLL TOP ==========*/
+.scrolltop {
+  position: fixed; 
+  right: 1.5rem; 
+  bottom: -20%;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  padding: 0.3rem; 
+  background: rgba(6, 156, 84, 0.5);
+  border-radius: 0.4rem; 
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.scrolltop__icon { 
+  font-size: 1.8rem; 
+  color: var(--body-color); 
+}
+
+.show-scroll { 
+  bottom: 3rem; 
+}
+
+/*========== MAIN PADDING ==========*/
+.l-main {
+  padding-top: var(--header-height);
+}
+
+.about-page {
+  padding-top: 2rem !important;
+}
+
+/*========== LARGE SCREEN FLUID SCALING ==========*/
+@media screen and (min-width: 1367px) {
+  .bd-container {
+    max-width: 90vw;
+  }
+
+  .nav {
+    max-width: 90vw;
+    width: 90vw;
+  }
+
+  .homecontact__inner {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .bd-container {
+    max-width: 88vw;
+  }
+
+  .nav {
+    max-width: 88vw;
+    width: 88vw;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .bd-container {
+    max-width: 85vw;
+  }
+
+  .nav {
+    max-width: 85vw;
+    width: 85vw;
+  }
+}
