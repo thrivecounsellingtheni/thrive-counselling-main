@@ -148,6 +148,19 @@
   }
 }
 
+/*========== TAMIL HOME HEADING FIX (LAPTOP/DESKTOP ONLY) ==========*/
+/* On desktop/laptop widths (>=1061px) there was no override for the
+   Tamil heading, so it fell back to the base 4rem English size and
+   overlapped the landing-page image. Mobile/tablet already had their
+   own correct sizes above, so this only adds the missing desktop case,
+   scoped to .ta-active (added by the language toggle script). English
+   is untouched. */
+@media screen and (min-width: 1061px) {
+  .home__title.ta-active {
+    font-size: 2.75rem;
+  }
+}
+
 @media screen and (min-width: 577px) {
   .home__subtitle {
     line-height: 1.7;

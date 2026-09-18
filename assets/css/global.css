@@ -233,6 +233,28 @@ html.lang-ta .nav__logo span {
   }
 }
 
+/*========== TAMIL NAV LOGO RESPONSIVE FIX (DESKTOP ONLY) ==========*/
+/* The Tamil heading (with "மையம்" added) is longer than the English one,
+   so on the desktop breakpoint (>=1061px) it was being squeezed into a
+   single line. Mobile/tablet are unaffected, so this only overrides the
+   desktop rule, scoped to html.lang-ta (the class your language toggle
+   script already applies). English is untouched. */
+@media screen and (min-width: 1061px) {
+  html.lang-ta .nav__logo span {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (min-width: 1061px) and (max-width: 1200px) {
+  html.lang-ta .nav__link {
+    font-size: 0.85rem;
+  }
+  html.lang-ta .nav__list {
+    column-gap: 1rem;
+  }
+}
+
 /*========== COMPONENTS ==========*/
 .button {
   display: inline-block;
